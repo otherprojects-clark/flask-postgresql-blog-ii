@@ -1,11 +1,10 @@
+import { createRouter, createWebHashHistory } from 'vue-router'
 import { createApp } from 'vue'
 import App from './App.vue'
+
 import './style.css'
 import 'uikit/dist/css/uikit.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
-
-// router
-import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   { path: "/", component: () => import("./views/Index.vue") },
@@ -16,7 +15,6 @@ const routes = [
   { path: "/edit/:id", component: () => import("./views/crud/Edit.vue") },
   { path: "/post/:id", component: () => import("./views/crud/Post.vue") },
   { path: "/posts", component: () => import("./views/crud/Posts.vue") }
-  // this is fun
 ]
 
 const router = createRouter({

@@ -20,8 +20,11 @@
   </div>
 </div>
 </template>
+
 <script>
 import axios from 'axios'
+import { getPostInfo } from './getPostInfo'
+import { getStatus } from './getStatus'
 import { serverurl } from '../../data'
 
 export default {
@@ -32,28 +35,9 @@ export default {
       status: ''
     }
   },
-  methods: {
-    async getPost(id = this.id){
-      try {
-        let post = await axios.get(serverurl + `post/${id}`)
-        this.post = post.data
-      } catch(err) {
-        console.error(err)
-        return err.response.status
-      }
-    },
-    async getStatus(){
-      try {
-        let code = await axios.get(serverurl + `post/${this.id}`)
-        return code.status
-      } catch (err) {
-        return err.response.status
-      }
-    }
-  },
   async created() {
-    this.status = await this.getStatus()
-    this.post = this.getPost()
+    this.status = await getStatus(this.id)
+    this.post = await getPostInfo(this.id)
     this.$watch(
       () => this.$route.params,
       async (toParams, previousParams) => {

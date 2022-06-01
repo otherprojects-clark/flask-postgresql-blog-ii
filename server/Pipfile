@@ -5,9 +5,10 @@ name = "pypi"
 
 [packages]
 psycopg2 = "*"
-colorama = "*"
 arrow = "*"
 Flask = "*"
+Flask-Cors = "*"
+colorama = "*"
 
 [dev-packages]
 

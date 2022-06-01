@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import { title, serverurl as server } from '../data'
 
 export default {

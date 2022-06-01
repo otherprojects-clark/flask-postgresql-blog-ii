@@ -4,12 +4,7 @@
     <div>
       <router-link to="/about">About</router-link>
     </div>
-    <div>
-      
-    </div>
   </nav>
-  <div >
-  </div>
   <div>
     <router-view />
   </div>
