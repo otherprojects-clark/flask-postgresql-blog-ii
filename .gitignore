@@ -1,0 +1,20 @@
+# ignored folders
+client/node_modules
+md/
+views/
+!client/src/views
+
+# cache and friends
+*__pycache__
+.idea
+server/postgres
+*.bak
+
+# test files ig
+test.*
+test
+
+# some files
+*.sublime-workspace
+*.sublime-project
+*.afdesign
